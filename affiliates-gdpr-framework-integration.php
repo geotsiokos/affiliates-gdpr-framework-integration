@@ -37,12 +37,12 @@ function affiliates_gdpr_registration_after_fields( $output ) {
 	$privacy_policy = get_option( 'gdpr_policy_page' );
 	$terms_page = get_option( 'gdpr_terms_page' );
 
-    $termsUrl = $terms_page ? get_permalink( $terms_page ) : false;
-    $privacyPolicyUrl = $privacy_policy ? get_permalink( $privacy_policy ) : false;
+	$termsUrl = $terms_page ? get_permalink( $terms_page ) : false;
+	$privacyPolicyUrl = $privacy_policy ? get_permalink( $privacy_policy ) : false;
 
-    $output .= gdpr('view')->render(
-    	'modules/wordpress-user/registration-terms-checkbox',
-    	compact( 'privacyPolicyUrl', 'termsUrl' )
-    );
+	$output .= gdpr('view')->render(
+		'modules/wordpress-user/registration-terms-checkbox',
+		compact( 'privacyPolicyUrl', 'termsUrl' )
+	);
 	return $output;
 }
